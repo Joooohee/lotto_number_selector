@@ -1,13 +1,110 @@
 html, body {
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 body {
     background: #217dbc;
     color: white;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+li, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+  }
+
+  header {
+      margin-bottom: 40px;
+      font-size: 40px;
+      font-weight: 700;
+  }
+
+main {
+    width: 70%;
+    /* height: 80%;
+    background-color: yellow; */
+  }
+
+.content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loto-numbers {
+    display: flex;
+}
+
+.number {
+    background: red;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.number:last-child {
+    margin-right: 0;
+}
+
+.operator {
+    background: none;
+    font-size: 50px;
+}
+
+footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a, button {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a { 
+    text-decoration: none; 
+} 
+
+#winning-number {
+    background-color: #3b657d;
+    width: 55%;
+}
+
+#extraction-number {
+    background-color: #09857d;
+    width: 40%;
+}
+
+.none {
+    display: none;
 }
