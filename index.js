@@ -49,7 +49,7 @@ function getLotoNum() {
     for(let i=0; array.length<6; i++)
     {
         const num = randomNum();
-        if(array[array.length -1] !== num)
+        if(array.indexOf(num) === -1)
         {
             array.push(num);
         } 
