@@ -52,7 +52,6 @@ main {
 }
 
 .number {
-    background: red;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -60,6 +59,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px solid white;
 
 }
 
@@ -70,6 +70,7 @@ main {
 .operator {
     background: none;
     font-size: 50px;
+    border: none;
 }
 
 footer {

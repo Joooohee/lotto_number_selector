@@ -9,18 +9,39 @@ const MIN = 1;
 
 function showNumber() {
     noneNumbers.classList.add("none");
-    while ( lotoNumbers.hasChildNodes() ) { lotoNumbers.removeChild( lotoNumbers.firstChild ); }
+    while ( lotoNumbers.hasChildNodes() ) { 
+        lotoNumbers.removeChild( lotoNumbers.firstChild ); 
+    }
 
     const lotoNums =  getLotoNum();
     lotoNums.map((x,i) => {
+        if(i === lotoNums.length - 1 ) { 
+            const li = document.createElement('li');
+            li.classList.add("number","operator");
+            li.innerText = "+";
+            lotoNumbers.appendChild(li);
+        }
+        const backColor = getNumberColor(x);
         const li = document.createElement('li');
         li.classList.add("number");
         li.innerText = x;
-        setTimeout(lotoNumbers.appendChild(li),30000);
-        
-    }
-       
-        )
+        li.style.background = backColor;
+        lotoNumbers.appendChild(li);      
+    })
+}
+
+function getNumberColor(index) {
+   if(index <= 10) {
+      return "#f38f06";
+   }else if(index <= 20) {
+      return "#1563d6";
+   }else if(index <=30) {
+      return "#c23b1f";
+   }else if(index <=40) {
+       return "#575d65";
+   }else {
+       return "#1faa18";
+   }
 }
 
 function getLotoNum() {
