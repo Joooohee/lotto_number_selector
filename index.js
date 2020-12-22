@@ -61,7 +61,7 @@ function getNumberColor(index) {
 
 function getLotoNum() {
     const array = [];
-    for (let i = 0; array.length < 6; i++) {
+    for (let i = 0; array.length <= 6; i++) {
         const num = randomNum();
         if (array.indexOf(num) === -1) {
             array.push(num);
