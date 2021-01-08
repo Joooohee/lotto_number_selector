@@ -16,7 +16,7 @@ function handleClick() {
         if (loadIndex === 0) {
             clearInterval(loadeInterval);
             loading.classList.add("none");
-            
+
             showLotoNum();
         }
     }, 1000);
@@ -24,18 +24,11 @@ function handleClick() {
 
 function showLotoNum() {
     noneNumbers.classList.add("none");
-
     while (lotoNumbers.hasChildNodes()) {
         lotoNumbers.removeChild(lotoNumbers.firstChild);
     }
     const lotoNums = getLotoNum();
-    lotoNums.map((x, i) => {
-        if (i === lotoNums.length - 1) {
-            const li = document.createElement("li");
-            li.classList.add("number", "operator");
-            li.innerText = "+";
-            lotoNumbers.appendChild(li);
-        }
+    lotoNums.forEach((x, i) => {
         const backColor = getNumberColor(x);
         const li = document.createElement("li");
         li.classList.add("number");
@@ -61,13 +54,13 @@ function getNumberColor(index) {
 
 function getLotoNum() {
     const array = [];
-    for (let i = 0; array.length <= 6; i++) {
+    for (let i = 0; array.length < 6; i++) {
         const num = randomNum();
         if (array.indexOf(num) === -1) {
             array.push(num);
         }
     }
-    return array;
+    return array.sort((a, b) => a - b);
 }
 
 function randomNum() {
